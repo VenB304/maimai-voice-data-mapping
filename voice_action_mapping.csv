@@ -1,0 +1,245 @@
+﻿VO_ID,Cue_Index,Voice_Type,ACB_File,Game_Context,Caller_Methods,Evidence,Also_In_Other_Voice_Map,Notes
+VO_000001,0,System,Voice_000001,Entry / General system voice,ModeSelectMonitor.ViewUpdate; AdvDemoProcess.OnUpdate; CharacterSelectProces.PostReset; NameEntryProcess.OnUpdate,Confirmed,No,Used across multiple screens. Often appears as target param (0=both monitors) but also as a conditional cue in mode selection and character select.
+VO_000002,1,System,Voice_000001,Entry / General system voice,ModeSelectMonitor.ViewUpdate; CharacterSelectProces.PostReset; PhotoShootProcess.ChangeCountDownSound; TutorialSelectProces.OnUpdate,Confirmed,No,"Appears in mode select branches, photo countdown, and tutorial. Sometimes used as target param (1=player 1)."
+VO_000003,2,System,Voice_000001,Entry / General system voice,AdvertiseProcess.OnUpdate (PlayVoice); CharacterSelectProces.PostReset; PhotoEditProcess.MainMenuUpdate; TutorialSelectProces.OnUpdate,Confirmed,No,"Advertise screen voice; appears in character select, photo edit, tutorial select."
+VO_000004,3,System,Voice_000001,Mode select / Photo sequence voice,ModeSelectMonitor.ViewUpdate; AdvDemoProcess.OnUpdate; PhotoShootProcess.EnterPhotographingSequence; SimpleSettingProcess.EnterPhotographingSequence; RegionalSelectProcess.RegionSelectDecide,Confirmed,No,Mode selection voice; photo sequence entrance; regional select voice.
+VO_000005,4,System,Voice_000001,Mode select / Ticket select voice,ModeSelectMonitor.ViewUpdate; CharacterSelectProces.PostReset; TicketSelectMonitor.ViewUpdate; PlayAdvertiseVoice calls,Confirmed,No,Mode select branch voice; ticket select screen; advertise voice.
+VO_000006,5,System,Voice_000001,Entry confirmation voice,Process.Entry.State.ConfirmEntry.Exec (via StateEntry.PlayVoice),Confirmed,No,Played when entry is confirmed. Conditional with VO_000001.
+VO_000007,6,System,Voice_000001,Ticket select voice,Monitor.TicketSelect.TicketSelectMonitor.ViewUpdate,Confirmed,No,Plays during ticket selection screen updates.
+VO_000008,7,System,Voice_000001,Photo countdown / General countdown,PhotoShootProcess.ChangeCountDownSound; SimpleSettingProcess.ChangeCountDownSound,Confirmed,No,Countdown sound during photo shoot sequence. Part of 3-2-1 countdown set with VO_000031/VO_000032.
+VO_000009,8,System,Voice_000001,Information screen voice,Monitor.Information.InformationMonitor.ViewUpdate,Confirmed,No,Plays during information/announcement display.
+VO_000011,10,System,Voice_000001,System / Result display,FriendBattleResultMonitor.SetClassData; FriendSeasonRankingMonitor.PlayRankingSE (as SE),Inferred,No,Used in friend battle result class data display. May be a ranking/tier voice.
+VO_000012,11,System,Voice_000001,Please Wait countdown,PleaseWaitProcess.OnUpdate → PleaseWaitMonitor.Play10CountDown,Confirmed,No,10-second countdown during Please Wait screen.
+VO_000013,12,System,Voice_000001,System voice (sequential),,Inferred,No,Sequential block between VO_000012 and VO_000015. Likely countdown or wait-related.
+VO_000015,14,System,Voice_000001,Collection screen update voice,CollectionProcess.OnUpdate,Confirmed,No,Plays during collection screen interaction updates.
+VO_000016,15,System,Voice_000001,Judge SE trigger (note judgment),NoteBase.Judge; NoteBase.JudgeToolate; HoldNote.JudgeHoldHead; BreakHoldNote.JudgeHoldHead; TouchHoldC.JudgeHoldHead; TouchNoteB.Judge,Confirmed,No,Internal trigger for note judgment sound effects. Used as parameter to PlayJudgeSe methods.
+VO_000017,16,System,Voice_000001,Name entry interaction,NameEntryProcess.OnUpdate,Confirmed,No,Voice during name entry update; paired with target param at same offset.
+VO_000018,17,System,Voice_000001,Name entry confirm,NameEntryMonitor.Input2Confirm,Confirmed,No,Voice when name input is confirmed (solo entry - no ambiguous values at this call).
+VO_000019,18,System,Voice_000001,Name entry completed,NameEntryMonitor.GotoCompleted,Confirmed,No,Voice when name entry is complete and transitioning.
+VO_000020,19,System,Voice_000001,Code read start,Process.CodeRead.CodeReadProcess.StartLogic,Confirmed,No,Voice at the start of QR/barcode reading sequence. Called twice (two branches).
+VO_000022,21,System,Voice_000001,Code read / Card scan interaction,CodeReadProcess.FirstInformationReadMessageComplete; CodeReadProcess.LogicUpdate; CodeReadProcess.UpdateInput,Confirmed,No,"Voice during various code read states - first info complete, logic updates, input processing."
+VO_000024,23,System,Voice_000001,System voice (gap fill),,Inferred,No,Between code read (VO_000022) and settings (VO_000026). Likely code-read or transition related.
+VO_000026,25,System,Voice_000001,Simple setting voice,SimpleSettingMonitor+<PlayCoroutine>.MoveNext,Confirmed,No,Voice during initial simple settings coroutine.
+VO_000027,26,System,Voice_000001,Photo preparation voice,PhotoShootProcess.EnterPhotographingSequence; SimpleSettingProcess.EnterPhotographingSequence,Confirmed,No,Voice when preparing the photo sequence. Plays after VO_000029.
+VO_000028,27,System,Voice_000001,System voice (photo sequence block),,Inferred,No,Sequential between VO_000027 and VO_000029 in the photo sequence block.
+VO_000029,28,System,Voice_000001,Photo notification / Entry voice,PhotoShootProcess.EnterPhotographingSequence; SimpleSettingProcess.EnterPhotographingSequence,Confirmed,No,First voice when entering photo sequence. Also conditional with VO_000004.
+VO_000030,29,System,Voice_000001,System voice (countdown block),,Inferred,No,Adjacent to countdown voices VO_000031/VO_000032. Likely part of countdown set.
+VO_000031,30,System,Voice_000001,Photo countdown (3 or 2),PhotoShootProcess.ChangeCountDownSound; SimpleSettingProcess.ChangeCountDownSound,Confirmed,No,Part of photo countdown sequence. Called at different IL offsets from VO_000032.
+VO_000032,31,System,Voice_000001,Photo countdown (1 or Go),PhotoShootProcess.ChangeCountDownSound; SimpleSettingProcess.ChangeCountDownSound,Confirmed,No,Part of photo countdown sequence. Appears twice at different offsets (likely 2 and 1 counts).
+VO_000033,32,System,Voice_000001,Character select lock SE,CharacterSelectProces.Lock (via PlaySE),Confirmed,No,"Sound when locking in character selection. Note: This is the SE (sound effect) cue, not necessarily a voice line - same cue index space."
+VO_000034,33,System,Voice_000001,System voice (settings block),,Inferred,No,"Sequential after VO_000033, within settings/character block."
+VO_000035,34,System,Voice_000001,System voice (settings block),,Inferred,No,"Sequential within settings block, before VO_000036."
+VO_000036,35,System,Voice_000001,Tutorial select voice,TutorialSelectProces.OnUpdate,Confirmed,No,Voice during tutorial selection. Paired with VO_000002 and VO_000003 as conditional branches.
+VO_000037,36,System,Voice_000001,System voice (selection block),,Inferred,No,Sequential within selection block.
+VO_000038,37,System,Voice_000001,System voice (selection block),,Inferred,No,Adjacent to mode selection voices.
+VO_000040,39,System,Voice_000001,System voice (gap - no idx 39 in enum due to VO_000039 missing),,Inferred,No,In system voice block after VO_000038. Note: VO_000039 not in system enum.
+VO_000041,40,System,Voice_000001,System voice,,Inferred,No,In the general system voice block. Note: also exists in partner voice map.
+VO_000042,41,System,Voice_000001,System voice,,Inferred,No,In the general system voice block.
+VO_000043,42,System,Voice_000001,System voice,,Inferred,No,Sequential system voice.
+VO_000044,43,System,Voice_000001,System voice,,Inferred,No,Sequential system voice.
+VO_000045,44,System,Voice_000001,System voice,,Inferred,No,Sequential system voice.
+VO_000046,45,System,Voice_000001,System voice,,Inferred,No,Sequential system voice.
+VO_000047,46,System,Voice_000001,System voice,,Inferred,No,Sequential system voice.
+VO_000048,47,System,Voice_000001,System voice,,Inferred,No,Sequential system voice.
+VO_000049,48,System,Voice_000001,System voice,,Inferred,No,Sequential system voice.
+VO_000050,49,System,Voice_000001,System voice,,Inferred,No,Sequential system voice.
+VO_000051,50,System,Voice_000001,System voice,,Inferred,No,Sequential system voice.
+VO_000052,51,System,Voice_000001,System voice,,Inferred,No,Sequential system voice.
+VO_000053,52,System,Voice_000001,Unlock/reward fanfare SE,FriendBattleResultMonitor.PlayUnlockInfo/PlayReliefInfo; KaleidxScopeTotalResultState+UnlockMusic; RegionalSelectProcess.RegionSelectDecide; UnlockMusicMonitor.PlayUnlockMusic; GhostResultMonitor.PlayUnlockInfo; LoginBonusMonitor.GetItemFadeIn_Update; FriendSeasonRankingMonitor.RewardFadeIn (all via PlaySE),Confirmed,No,Unlock/reward jingle SE played across many screens when items/music/rewards are unlocked.
+VO_000054,53,System,Voice_000001,Camera shutter SE,PhotoShootProcess.UpdatePhotograph; SimpleSettingProcess.UpdatePhotograph; PhotoManager.Update (all via PlaySE),Confirmed,No,Camera shutter sound effect during photo capture.
+VO_000055,54,System,Voice_000001,System voice,,Inferred,No,Sequential in system voice block.
+VO_000056,55,System,Voice_000001,System voice,,Inferred,No,Sequential in system voice block.
+VO_000057,56,System,Voice_000001,System voice,,Inferred,No,Sequential in system voice block.
+VO_000058,57,System,Voice_000001,System voice,,Inferred,No,Sequential before information voices.
+VO_000059,58,System,Voice_000001,Information voice 1,Monitor.Information.InformationMonitor.ViewUpdate,Confirmed,No,First information/announcement voice. Part of info display sequence with VO_000060 and VO_000061.
+VO_000060,59,System,Voice_000001,Information voice 2,Monitor.Information.InformationMonitor.ViewUpdate,Confirmed,No,Second information/announcement voice at separate IL offset from VO_000059.
+VO_000061,60,System,Voice_000001,Information voice 3,Monitor.Information.InformationMonitor.ViewUpdate,Confirmed,No,Third information/announcement voice at separate IL offset.
+VO_000062,61,System,Voice_000001,System voice (music select BGM),MusicSelectProcess.ChangeBGM (via PlayBGM),Inferred,No,Appears in BGM switch context. Cue index 61 - BGM select. Note: PlayBGM uses different ACB.
+VO_000063,62,System,Voice_000001,System voice,,Inferred,No,Sequential near VO_000062.
+VO_000065,64,System,Voice_000001,Entry decided / Region decided voice,Process.Entry.TryEntry.DecideEntry; Process.RegionalSelectProcess.Decide,Confirmed,No,Voice when player entry is decided or region is selected. Two distinct confirmed call sites.
+VO_000066,65,System,Voice_000001,Regional discover voice,RegionalDiscover.Next,Confirmed,No,Voice when discovering/advancing in regional feature.
+VO_000075,74,System,Voice_000001,System voice (high index block),,Inferred,No,Index 74. In the system voice block between VO_000066 and VO_000089.
+VO_000076,75,System,Voice_000001,System voice (high index block),,Inferred,No,Index 75. Sequential with VO_000075.
+VO_000077,76,System,Voice_000001,System voice (high index block),,Inferred,No,Index 76. Sequential with VO_000076.
+VO_000089,88,System,Voice_000001,System voice,,Inferred,No,Index 88. Isolated block.
+VO_000090,89,System,Voice_000001,System voice,,Inferred,No,Index 89. Sequential with VO_000089.
+VO_000091,90,System,Voice_000001,System voice,,Inferred,No,Index 90. Sequential with VO_000090.
+VO_000110,109,System,Voice_000001,Character select / preview voice,CharacterSelectProces.PostReset; CharacterSelectProces.UpdateCharactorSelect (x2),Confirmed,No,Voice when character selection is reset or character is browsed. Called at IL offset 154 (separate from PostReset offset 128).
+VO_000111,110,System,Voice_000001,Character slot confirm voice,CharacterSelectProces.SelectSlot,Confirmed,No,Voice when confirming a character slot selection. At IL offset 758.
+VO_000142,141,System,Voice_000001,SE: Tab button press,TabButton.Pressed; MusicSelectSequence.ScoreKindMove; various OptionSelectSequence/GenreSelect/MenuSelect/SortSetting SE calls (all via PlaySE),Confirmed,Yes,UI tab/navigation button press sound effect. Very frequently used across selection screens.
+VO_000143,142,System,Voice_000001,SE: Scroll / Navigation tick,GenreSelectSequence.ScrollUpdate; MenuSelectSequence.Update; MusicSelectSequence.ScrollUpdate; OptionSelectSequence.Update; SortSettingSequence.Update; many more (all via PlaySE),Confirmed,No,UI scroll/navigation tick sound effect. The most frequently used SE in selection screens.
+VO_000144,143,System,Voice_000001,Result / Map result voice,Monitor.MapResultMonitor.ViewUpdate,Confirmed,No,"Voice during map/result screen, plays alongside map result processing."
+VO_000145,144,System,Voice_000001,SE: Confirm / Select press,DifficultySelectSequence.Update; MusicSelectSequence.Update; PhotoShootProcess; MenuSelectSequence.Update; many more (via PlaySE),Confirmed,No,UI confirm/select button press sound effect.
+VO_000146,145,System,Voice_000001,SE: System (sequential),,Inferred,No,Sequential SE after VO_000145 in the SE cue block.
+VO_000147,146,System,Voice_000001,SE: System (sequential),,Inferred,No,Sequential SE.
+VO_000148,147,System,Voice_000001,SE: System (sequential),,Inferred,No,Sequential SE.
+VO_000149,148,System,Voice_000001,SE: System (sequential),,Inferred,No,Sequential SE.
+VO_000150,149,System,Voice_000001,SE: System (sequential),,Inferred,No,Sequential SE.
+VO_000154,153,System,Voice_000001,Photo staging voice,PhotoEditProcess.UpdateStaging,Confirmed,No,Voice during photo edit staging/preview phase.
+VO_000156,155,System,Voice_000001,Collection information voice,CollectionProcess.OnUpdate; CollectionProcess.InputInformationSequence,Confirmed,No,Voice during collection screen info display and information input sequence.
+VO_000163,162,System,Voice_000001,Collection screen start voice,CollectionProcess.OnStart,Confirmed,No,Voice when the collection/customization screen initializes.
+VO_000169,168,System,Voice_000001,System voice (extended),,Inferred,No,Index 168. Start of extended voice block.
+VO_000170,169,System,Voice_000001,System voice (extended),,Inferred,No,Index 169.
+VO_000171,170,System,Voice_000001,System voice (extended),,Inferred,No,Index 170.
+VO_000172,171,System,Voice_000001,Freedom/Free play confirmation voice,Process.Entry.State.ConfirmFreedom.Init; Process.Entry.State.ConfirmFreedomOne.Init (via StateEntry.PlayVoice),Confirmed,No,Voice for free play mode confirmation. Paired conditionally with VO_000002 (target).
+VO_000173,172,System,Voice_000001,System voice (extended),,Inferred,No,Index 172.
+VO_000174,173,System,Voice_000001,System voice (extended),,Inferred,No,Index 173.
+VO_000176,175,System,Voice_000001,Track start SE,TrackStartMonitor.SetTrackStart (via PlaySE),Confirmed,No,Sound effect when track/song start display appears.
+VO_000177,176,System,Voice_000001,Collection get SE,CollectionGetList.PrepareAddAnimation; CollectionGetList.PlayAddAnimation (via PlaySE),Confirmed,No,Sound effect when getting/adding a collection item.
+VO_000178,177,System,Voice_000001,Character select voice / slot voice,CharacterSelectProces.PostReset; CharacterSelectProces.SelectSlot,Confirmed,No,Voice during character selection reset and slot selection.
+VO_000179,178,System,Voice_000001,Character select voice,CharacterSelectProces.PostReset,Confirmed,No,Voice during character selection reset sequence.
+VO_000180,179,System,Voice_000001,Character select voice,CharacterSelectProces.PostReset,Confirmed,No,Voice during character selection reset sequence.
+VO_000181,180,System,Voice_000001,System voice (character block),,Inferred,No,Sequential after VO_000180 in character voice block.
+VO_000183,182,System,Voice_000001,Code read SE,CodeReadProcess.LogicUpdate (via PlaySE),Confirmed,No,Sound effect during code read logic processing.
+VO_000185,184,System,Voice_000001,System voice (extended),,Inferred,No,Index 184.
+VO_000186,185,System,Voice_000001,System voice (extended),,Inferred,No,Index 185.
+VO_000205,204,System,Voice_000001,System voice (later addition),,Inferred,No,Index 204. Non-sequential placement suggests later game update.
+VO_000207,206,System,Voice_000001,System voice (later addition),,Inferred,Yes,Index 206.
+VO_000208,207,System,Voice_000001,System voice (later addition),,Inferred,Yes,Index 207.
+VO_000209,208,System,Voice_000001,System voice / Movie player,,Inferred,Yes,"Index 208. Movie player-related (appears in MovieController params but as movie ID, not voice)."
+VO_000210,209,System,Voice_000001,System voice (later addition),,Inferred,Yes,Index 209.
+VO_000223,222,System,Voice_000001,System voice (photo edit block),,Inferred,No,Index 222. Adjacent to confirmed photo edit voices.
+VO_000224,223,System,Voice_000001,Photo edit menu voice 1,PhotoEditProcess.MainMenuUpdate; PhotoEditProcess.UnregisteredUpdate,Confirmed,No,Voice during photo edit main menu and unregistered state.
+VO_000225,224,System,Voice_000001,Photo edit menu voice 2,PhotoEditProcess.MainMenuUpdate,Confirmed,No,Second photo edit menu voice at different IL offset from VO_000224.
+VO_000226,225,System,Voice_000001,Photo edit confirmation voice,PhotoEditProcess.ConfirmationUpdate,Confirmed,No,Voice when confirming photo edit actions.
+VO_000227,226,System,Voice_000001,Collection update voice,CollectionProcess.OnUpdate,Confirmed,No,Voice during collection screen update. At same IL offset as VO_000015 (conditional).
+VO_000228,227,System,Voice_000001,Common dialog voice (ConstParameter.CommonDialogVoice),CodeReadProcess.LogicUpdate; TicketSelectMonitor.ViewUpdate; ModeSelectMonitor.ViewUpdate; LoginBonusMonitor.SelectCardFadeInJudgeWait_Update,Confirmed,No,The primary common dialog voice. Hardcoded in ConstParameter.CommonDialogVoice = VO_000228. Used across many screens as default dialog voice.
+VO_000229,228,System,Voice_000001,System voice (dialog block),,Inferred,No,Index 228. Adjacent to CommonDialogVoice.
+VO_000230,229,System,Voice_000001,System voice (dialog block),,Inferred,No,Index 229.
+VO_000231,230,System,Voice_000001,System voice (dialog block),,Inferred,No,Index 230.
+VO_000232,231,System,Voice_000001,System voice (dialog block),,Inferred,No,Index 231.
+VO_000235,234,System,Voice_000001,System voice (gap),,Inferred,No,Index 234. Gap after dialog block.
+VO_000238,237,System,Voice_000001,System voice,,Inferred,No,Index 237. Before regional select voices.
+VO_000239,238,System,Voice_000001,Regional select voice 1,RegionalSelectProcess.RegionSelectDecide,Confirmed,No,One of 6 conditional region select voices (switch on region type).
+VO_000240,239,System,Voice_000001,Regional select voice 2,RegionalSelectProcess.RegionSelectDecide,Confirmed,No,Region select voice for a specific region type.
+VO_000241,240,System,Voice_000001,Regional select voice 3 / SE: Touch confirm (dual use),RegionalSelectProcess.RegionSelectDecide (PlayVoice); ALSO many PlaySE calls across screens,Confirmed,No,As voice: region select voice. As SE (cue 240): the most common touch/confirm sound effect. NOTE: same cue index used in SE ACB for touch effects.
+VO_000242,241,System,Voice_000001,Regional select voice 4,RegionalSelectProcess.RegionSelectDecide,Confirmed,No,Region select voice for a specific region type.
+VO_000255,242,System,Voice_000001,System voice (latest additions),,Inferred,No,Index 242. Late addition block start.
+VO_000256,243,System,Voice_000001,System voice (latest additions),,Inferred,No,Index 243.
+VO_000257,244,System,Voice_000001,System voice (latest additions),,Inferred,No,Index 244.
+VO_000258,245,System,Voice_000001,Result screen - Rank achievement voice 1,MapResultMonitor.ViewUpdate,Confirmed,No,Voice during result screen at IL offset 5894. Plays for rank display.
+VO_000259,246,System,Voice_000001,Result screen - Rank achievement voice 2,MapResultMonitor.ViewUpdate,Confirmed,No,Voice during result screen at IL offset 5995. Plays after VO_000258 for higher rank.
+VO_000260,247,System,Voice_000001,System voice (result block),,Inferred,No,Index 247. Adjacent to confirmed result voices.
+VO_000261,248,System,Voice_000001,System voice (result block),,Inferred,No,Index 248.
+VO_000262,249,System,Voice_000001,System voice (result block),,Inferred,No,Index 249.
+VO_000263,250,System,Voice_000001,Mode select specific voice,ModeSelectMonitor.ViewUpdate,Confirmed,No,"Mode select voice at IL offset 1225, separate from the multi-branch at offset 915."
+VO_000103,251,System,Voice_000001,System voice (appended),,Inferred,Yes,Index 251. Appended to end of enum in later update.
+VO_000104,252,System,Voice_000001,System voice (appended),,Inferred,Yes,Index 252.
+VO_000109,253,System,Voice_000001,System voice (appended),,Inferred,Yes,Index 253.
+VO_000112,254,System,Voice_000001,Option select start voice,Process.SubSequence.OptionSelectSequence.OnStartSequence,Confirmed,Yes,Voice when entering the option/settings select screen.
+VO_000114,255,System,Voice_000001,System voice (appended),,Inferred,Yes,Index 255.
+VO_000206,256,System,Voice_000001,System voice (appended),,Inferred,Yes,Index 256.
+VO_000099,257,System,Voice_000001,System voice (appended),,Inferred,Yes,Index 257. Also exists in partner voice map (partner index 7).
+VO_000101,258,System,Voice_000001,System voice (appended),,Inferred,Yes,Index 258. Also exists in partner voice map (partner index 8).
+VO_000133,259,System,Voice_000001,Unlock notification voice,Monitor.UnlockMonitor.UnlockCheck,Confirmed,Yes,Voice when checking/displaying an unlock event.
+VO_000151,260,System,Voice_000001,System voice (appended),,Inferred,Yes,Index 260.
+VO_000152,261,System,Voice_000001,System voice (appended),,Inferred,Yes,Index 261.
+VO_000153,262,System,Voice_000001,System voice (appended),,Inferred,Yes,Index 262.
+VO_000155,263,System,Voice_000001,System voice (appended),,Inferred,Yes,Index 263.
+VO_000157,264,System,Voice_000001,System voice (appended),,Inferred,Yes,Index 264.
+VO_000158,265,System,Voice_000001,System voice (appended),,Inferred,Yes,Index 265.
+VO_000159,266,System,Voice_000001,System voice (appended),,Inferred,Yes,Index 266.
+VO_000182,267,System,Voice_000001,System voice (appended),,Inferred,Yes,Index 267. Also exists in partner voice map (partner index 40).
+VO_000184,268,System,Voice_000001,System voice (appended),,Inferred,Yes,Index 268. Also exists in partner voice map (partner index 41).
+VO_000187,269,System,Voice_000001,Score kind change voice (DX score),MusicSelectSequence.ScoreKindChange,Confirmed,Yes,"Voice when switching score kind (e.g., to DX Score). At IL offset 37."
+VO_000188,270,System,Voice_000001,Score kind change voice (Standard score),MusicSelectSequence.ScoreKindChange,Confirmed,Yes,"Voice when switching score kind (e.g., to Standard). At IL offset 81."
+VO_000189,271,System,Voice_000001,System voice (appended),,Inferred,Yes,Index 271.
+VO_000247,272,System,Voice_000001,System voice (appended),,Inferred,Yes,Index 272.
+VO_000248,273,System,Voice_000001,Simple setting process voice,SimpleSettingMonitor+<PlayCoroutine>.MoveNext,Confirmed,Yes,"Voice during simple settings coroutine, at IL offset 269."
+VO_000253,274,System,Voice_000001,System voice (appended),,Inferred,Yes,Index 274.
+VO_000264,275,System,Voice_000001,System voice (appended),,Inferred,No,Index 275.
+VO_000265,276,System,Voice_000001,System voice (appended) / Partner room entry (see partner voice),,Inferred,Yes,Index 276. Also VO_000265 in partner voice map (index 93) = partnerRoomEntryVoice from all Partner.xml files.
+VO_000080,0,Partner,Voice_Partner_XXXXXX,Partner: Default / base voice (index 0),ResultProcess.LogicUpdate (possibly target param); SortSettingSequence.Update (possibly target),Inferred,No,Partner cue index 0. Appears in scan but often as target parameter. May be the default/fallback partner voice.
+VO_000081,1,Partner,Voice_Partner_XXXXXX,Partner: Login bonus / sort setting greeting,LoginBonusMonitor.GetCharacterFadeOutWait1_Update; SortSettingSequence.OnStartSequence (conditional),Inferred,No,Partner cue index 1. Appears alongside other cues; may be target param in some contexts.
+VO_000084,2,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 2),,Inferred,No,Partner cue index 2.
+VO_000085,3,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 3),,Inferred,No,Partner cue index 3.
+VO_000086,4,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 4),,Inferred,No,Partner cue index 4.
+VO_000087,5,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 5),,Inferred,No,Partner cue index 5.
+VO_000088,6,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 6),,Inferred,No,Partner cue index 6.
+VO_000099,7,Partner,Voice_Partner_XXXXXX,Partner: Difficulty select voice,Process.SubSequence.DifficultySelectSequence.OnStartSequence,Confirmed,Yes,Partner voice when entering difficulty selection screen. Partner cue index 7.
+VO_000101,8,Partner,Voice_Partner_XXXXXX,Partner: Menu select voice / VoiceCheck,MenuSelectSequence.OnStartSequence; MenuSelectSequence.VoiceCheck,Confirmed,Yes,Partner voice when menu selection starts and during voice check. Partner cue index 8.
+VO_000113,9,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 9),,Inferred,No,Partner cue index 9.
+VO_000114,10,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 10),,Inferred,Yes,Partner cue index 10.
+VO_000116,11,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 11),,Inferred,No,Partner cue index 11.
+VO_000118,12,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 12),,Inferred,No,Partner cue index 12.
+VO_000119,13,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 13),,Inferred,No,Partner cue index 13.
+VO_000120,14,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 14),,Inferred,No,Partner cue index 14.
+VO_000121,15,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 15),,Inferred,No,Partner cue index 15.
+VO_000122,16,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 16),,Inferred,No,Partner cue index 16.
+VO_000123,17,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 17),,Inferred,No,Partner cue index 17.
+VO_000124,18,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 18),,Inferred,No,Partner cue index 18.
+VO_000125,19,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 19),,Inferred,No,Partner cue index 19.
+VO_000126,20,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 20),,Inferred,No,Partner cue index 20.
+VO_000127,21,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 21),,Inferred,No,Partner cue index 21.
+VO_000128,22,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 22),,Inferred,No,Partner cue index 22.
+VO_000129,23,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 23),,Inferred,No,Partner cue index 23.
+VO_000130,24,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 24),,Inferred,No,Partner cue index 24.
+VO_000131,25,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 25),,Inferred,No,Partner cue index 25.
+VO_000133,26,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 26),,Inferred,Yes,Partner cue index 26. Also exists in system voice map (index 259) for unlock notifications.
+VO_000139,27,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 27),,Inferred,No,Partner cue index 27.
+VO_000141,28,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 28),,Inferred,No,Partner cue index 28.
+VO_000151,29,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 29),,Inferred,Yes,Partner cue index 29.
+VO_000152,30,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 30),,Inferred,Yes,Partner cue index 30.
+VO_000153,31,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 31),,Inferred,Yes,Partner cue index 31.
+VO_000155,32,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 32),,Inferred,Yes,Partner cue index 32.
+VO_000157,33,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 33),,Inferred,Yes,Partner cue index 33.
+VO_000158,34,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 34),,Inferred,Yes,Partner cue index 34.
+VO_000159,35,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 35),,Inferred,Yes,Partner cue index 35.
+VO_000164,36,Partner,Voice_Partner_XXXXXX,Partner: Continue screen voice,Process.ContinueProcess.OnUpdate,Confirmed,No,Partner voice during continue screen. Mod reported as VO_000037(36) using system map; correct partner ID is VO_000164 at partner index 36.
+VO_000165,37,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 37),,Inferred,No,Partner cue index 37. Adjacent to confirmed continue voice.
+VO_000166,38,Partner,Voice_Partner_XXXXXX,Partner: Game over voice 1,Process.GameOverProcess.OnUpdate,Confirmed,No,First partner voice during game over screen. Partner cue index 38.
+VO_000167,39,Partner,Voice_Partner_XXXXXX,Partner: Game over voice 2,Process.GameOverProcess.OnUpdate,Confirmed,No,Second partner voice during game over. Mod reported VO_000040(39); correct partner ID is VO_000167 at index 39.
+VO_000182,40,Partner,Voice_Partner_XXXXXX,Partner: Genre select voice,Process.SubSequence.GenreSelectSequence.OnStartSequence,Confirmed,Yes,Partner voice when entering genre selection. Partner cue index 40.
+VO_000184,41,Partner,Voice_Partner_XXXXXX,Partner: Music select voice,Process.SubSequence.MusicSelectSequence.OnStartSequence,Confirmed,Yes,Partner voice when entering music selection. Partner cue index 41.
+VO_000187,42,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 42),,Inferred,Yes,Partner cue index 42. Also exists in system voice map (index 269) for score kind change.
+VO_000188,43,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 43),,Inferred,Yes,Partner cue index 43.
+VO_000189,44,Partner,Voice_Partner_XXXXXX,Partner: Sort setting start voice,Process.SubSequence.SortSettingSequence.OnStartSequence,Confirmed,Yes,Partner voice when entering sort settings. Partner cue index 44.
+VO_000200,45,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 45),,Inferred,No,Partner cue index 45.
+VO_000201,46,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 46),,Inferred,No,Partner cue index 46.
+VO_000202,47,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 47),,Inferred,No,Partner cue index 47.
+VO_000203,48,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 48),,Inferred,No,Partner cue index 48.
+VO_000204,49,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 49),,Inferred,No,Partner cue index 49.
+VO_000211,50,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 50),,Inferred,No,Partner cue index 50.
+VO_000213,51,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 51),,Inferred,No,Partner cue index 51.
+VO_000214,52,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 52),,Inferred,No,Partner cue index 52.
+VO_000217,53,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 53),,Inferred,No,Partner cue index 53.
+VO_000220,54,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 54),,Inferred,No,Partner cue index 54.
+VO_000222,55,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 55),,Inferred,No,Partner cue index 55.
+VO_000244,56,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 56),,Inferred,No,Partner cue index 56.
+VO_000245,57,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 57),,Inferred,No,Partner cue index 57.
+VO_000246,58,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 58),,Inferred,No,Partner cue index 58.
+VO_000247,59,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 59),,Inferred,Yes,Partner cue index 59.
+VO_000082,60,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 60),,Inferred,No,Partner cue index 60. Added in later update.
+VO_000083,61,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 61),,Inferred,No,Partner cue index 61.
+VO_000115,62,Partner,Voice_Partner_XXXXXX,Partner: Login bonus character voice,LoginBonusMonitor.GetCharacterFadeOutWait1_Update,Confirmed,No,Partner voice during login bonus character fade transition. Partner cue index 62. Mod reported as VO_000063(62) using system map.
+VO_000117,63,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 63),,Inferred,No,Partner cue index 63.
+VO_000248,64,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 64),,Inferred,Yes,Partner cue index 64.
+VO_000249,65,Partner,Voice_Partner_XXXXXX,Partner: Shop partner get voice,ShopPartnerGetWindow.PlayPartnerVoice (coroutine),Confirmed,No,Partner voice when obtaining a new partner from the shop. Partner cue index 65. Mod reported as VO_000066(65) using system map.
+VO_000250,66,Partner,Voice_Partner_XXXXXX,Partner: Login bonus greeting / card select voice,LoginBonusMonitor.Initialize; LoginBonusMonitor.SelectCardDecideInit_Update,Confirmed,No,Partner greeting during login bonus and when selecting login bonus card. Partner cue index 66.
+VO_000251,67,Partner,Voice_Partner_XXXXXX,Partner: Partner room / partner sequence voice,CollectionProcess.InputPartnerSequence,Confirmed,No,Partner voice during partner selection in collection/customization room. Partner cue index 67.
+VO_000252,68,Partner,Voice_Partner_XXXXXX,Partner: Touch / Result partner voice,CollectionProcess.TouchProcess; ResultProcess.LogicUpdate,Confirmed,No,Partner voice when touching partner and during result screen. Partner cue index 68.
+VO_000103,69,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 69),,Inferred,Yes,Partner cue index 69.
+VO_000104,70,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 70),,Inferred,Yes,Partner cue index 70.
+VO_000109,71,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 71),,Inferred,Yes,Partner cue index 71.
+VO_000112,72,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 72),,Inferred,Yes,Partner cue index 72.
+VO_000190,73,Partner,Voice_Partner_XXXXXX,Partner: Sort type voice - Type 1,SortSettingSequence.Update,Confirmed,No,Partner voice for sort type selection option 1. Partner cue index 73. Part of switch statement on sort type.
+VO_000191,74,Partner,Voice_Partner_XXXXXX,Partner: Sort type voice - Type 2,SortSettingSequence.Update,Confirmed,No,Partner voice for sort type selection option 2. Partner cue index 74. Mod incorrectly reported as VO_000075.
+VO_000192,75,Partner,Voice_Partner_XXXXXX,Partner: Sort type voice - Type 3,SortSettingSequence.Update,Confirmed,No,Partner voice for sort type selection option 3. Partner cue index 75. Mod incorrectly reported as VO_000076.
+VO_000193,76,Partner,Voice_Partner_XXXXXX,Partner: Sort type voice - Type 4,SortSettingSequence.Update,Confirmed,No,Partner voice for sort type selection option 4. Partner cue index 76. Mod incorrectly reported as VO_000077.
+VO_000194,77,Partner,Voice_Partner_XXXXXX,Partner: Sort type voice - Type 5,SortSettingSequence.Update,Confirmed,No,Partner voice for sort type selection option 5. Partner cue index 77.
+VO_000195,78,Partner,Voice_Partner_XXXXXX,Partner: Sort type voice - Type 6,SortSettingSequence.Update,Confirmed,No,Partner voice for sort type selection option 6. Partner cue index 78.
+VO_000196,79,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 79 - no confirmed caller),,Inferred,No,Partner cue index 79. In sort type block but not seen in scan.
+VO_000197,80,Partner,Voice_Partner_XXXXXX,Partner: Sort type voice - Type 7,SortSettingSequence.Update,Confirmed,No,Partner voice for sort type selection option 7. Partner cue index 80.
+VO_000198,81,Partner,Voice_Partner_XXXXXX,Partner: Sort type voice - Type 8,SortSettingSequence.Update,Confirmed,No,Partner voice for sort type selection option 8. Partner cue index 81.
+VO_000199,82,Partner,Voice_Partner_XXXXXX,Partner: Sort type voice - Type 9,SortSettingSequence.Update,Confirmed,No,Partner voice for sort type selection option 9. Partner cue index 82.
+VO_000206,84,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 84),,Inferred,Yes,Partner cue index 84. Note: index 83 is missing.
+VO_000243,85,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 85),,Inferred,No,Partner cue index 85.
+VO_000253,86,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 86),,Inferred,Yes,Partner cue index 86.
+VO_000254,87,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 87),,Inferred,No,Partner cue index 87.
+VO_000142,88,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 88),,Inferred,Yes,Partner cue index 88. Same VO_ID as system SE cue 141 (tab press) but different ACB/audio.
+VO_000207,89,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 89),,Inferred,Yes,Partner cue index 89.
+VO_000208,90,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 90),,Inferred,Yes,Partner cue index 90.
+VO_000209,91,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 91),,Inferred,Yes,Partner cue index 91.
+VO_000210,92,Partner,Voice_Partner_XXXXXX,Partner: Voice line (index 92),,Inferred,Yes,Partner cue index 92.
+VO_000265,93,Partner,Voice_Partner_XXXXXX,Partner: Partner room entry voice,CollectionProcess.PlayPartnerRoomEntryVoice (coroutine); All Partner.xml partnerRoomEntryVoice field,Confirmed,Yes,Voice when partner enters the partner room. Partner cue index 93. All 26 Partner.xml files set partnerRoomEntryVoice=VO_000265.
+VO_000266,94,Partner,Voice_Partner_XXXXXX,Partner: Intimate-up voice 1 / Bond level up,CollectionProcess.PlayIntimateUpVoiceRandom (selects from intimateUpVoice01/02/03); All Partner.xml intimateUpVoice01 field,Confirmed,No,Voice when partner bond/intimacy level increases. Partner cue index 94. Selected randomly from intimateUpVoice01/02/03 list via PlayIntimateUpVoiceRandom().

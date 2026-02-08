@@ -1,0 +1,28 @@
+# Game assets (copyrighted)
+SystemVoiceData/
+PartnerSoundData/
+partner_mapping/
+
+# Decompiled game code (copyrighted)
+Decomp/
+realDecomp/
+
+# Third-party tools (have their own repos)
+CriTools-master/
+vgmstream-win64/
+tools/de4dot/
+tools/de4dot.zip
+tools/bepinex/
+
+# Game DLL derivatives
+tools/Assembly-CSharp-cleaned.dll
+tools/AssemblyDumper/Assembly-CSharp-dumped.dll
+
+# Analysis output containing raw IL bytecodes from game
+tools/AssemblyDumper/deep_voice_analysis.txt
+tools/AssemblyDumper/voice_analysis.txt
+
+# Build artifacts and misc
+__pycache__/
+*.pyc
+chat.txt
