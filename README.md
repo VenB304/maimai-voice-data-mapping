@@ -1,6 +1,6 @@
 # maimai Voice & Partner Data Mapping
 
-Research project documenting the voice cue system in SEGA's maimai arcade rhythm game. Maps all `VO_XXXXXX` voice identifiers to their in-game behavior and context.
+Research project documenting the voice cue system in SEGA's **maimai DX PRiSM Plus (SDEX 1.55)**. Maps all `VO_XXXXXX` voice identifiers to their in-game behavior and context.
 
 ## What This Is
 

@@ -22,7 +22,7 @@
 
 ## 1. Project Overview
 
-**Goal:** Map every `VO_XXXXXX` voice cue identifier from the SEGA maimai arcade rhythm game to its in-game behavior — what screen it plays on, what triggers it, and whether it's a System Voice or Partner Voice.
+**Goal:** Map every `VO_XXXXXX` voice cue identifier from **SEGA maimai DX PRiSM Plus (SDEX 1.55)** to its in-game behavior — what screen it plays on, what triggers it, and whether it's a System Voice or Partner Voice.
 
 **Problem:** The game's decompiled C# code has **encrypted method bodies** — all decompilers produce empty methods. Working code logic can only be obtained from the game's runtime memory.
 
@@ -878,4 +878,4 @@ The `PlayIntimateUpVoiceRandom` method parses these strings to `Cue` enum values
 
 ---
 
-*Document generated from runtime analysis data collected via custom MelonLoader mod. Last analysis run against maimai (Sinmai.exe), Unity 2018.4.7f1, MelonLoader v0.6.4.*
+*Document generated from runtime analysis data collected via custom MelonLoader mod. Last analysis run against maimai DX PRiSM Plus (SDEX 1.55, Sinmai.exe), Unity 2018.4.7f1, MelonLoader v0.6.4.*
